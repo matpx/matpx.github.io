@@ -1,0 +1,60 @@
+header {
+    background-color: transparent;
+}
+
+.home-profile {
+    margin-top: 4em;
+    border-radius: 16px;
+    box-shadow: 0 0 8px rgb(160, 160, 160);
+}
+
+.home-avatar img {
+    image-rendering: pixelated;
+}
+
+.home-subtitle {
+    font-size: 64px;
+}
+
+.links {
+    margin-bottom: 1em;
+}
+
+.post-wrapper {
+    margin-top: 2em;
+    padding-left: 1.5em;
+    border-radius: 16px;
+    box-shadow: 0 0 8px rgb(160, 160, 160);
+}
+
+#renderCanvas {
+    position: fixed;
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    pointer-events: none;
+    box-sizing: border-box;
+}
+
+@supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+    header, .home-profile, .post-wrapper {
+        -webkit-backdrop-filter: blur(8px);
+        backdrop-filter: blur(8px);
+    }
+}
+
+@supports not ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
+    header, .home-profile, .post-wrapper {
+        background-color: rgba(255, 255, 255, 0.9);
+    }
+
+    body[theme="dark"] header,
+    body[theme="dark"] .home-profile,
+    body[theme="dark"] .post-wrapper {
+        background-color: rgba(41, 42, 45, 0.8);
+    }
+}
